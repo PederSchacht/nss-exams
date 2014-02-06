@@ -12,7 +12,7 @@
 
   function clickGo(){
     clearInterval(timer);
-    selectWord();
+    timer = setInterval(selectWord, 1000);
   }
 
   function selectWord(){
@@ -22,13 +22,8 @@
     var shuffled =_.shuffle(inputArray);
     for(var i=0; i<shuffled.length;i++){
       var word = shuffled[i];
-      timer = setTimeout(wait, 1000);
       evenOrOdd(word);
     }
-  }
-
-  function wait(){
-  //wait 1 second
   }
 
   function evenOrOdd(word){
